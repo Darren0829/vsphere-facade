@@ -7,12 +7,12 @@ import (
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
 	"time"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper"
-	"vsphere_api/helper/disk"
-	"vsphere_api/helper/network"
-	"vsphere_api/helper/virtualmachine"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/disk"
+	"vsphere-facade/helper/network"
+	"vsphere-facade/helper/virtualmachine"
 )
 
 type ReconfigureParameter struct {

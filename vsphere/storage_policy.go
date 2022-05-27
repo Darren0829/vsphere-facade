@@ -3,11 +3,11 @@ package vsphere
 import (
 	"context"
 	"github.com/vmware/govmomi/pbm/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
-	"vsphere_api/helper/spbm"
-	"vsphere_api/helper/vsphere"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/spbm"
+	"vsphere-facade/helper/vsphere"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryStoragePolicies(q protocol.StoragePolicyQuery) []protocol.StoragePolicyInfo {

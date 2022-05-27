@@ -3,10 +3,10 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/api/security"
-	"vsphere_api/vsphere"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/api/e"
+	"vsphere-facade/api/security"
+	"vsphere-facade/vsphere"
+	"vsphere-facade/vsphere/protocol"
 )
 
 type NetworkQuery struct {

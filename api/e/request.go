@@ -3,7 +3,7 @@ package e
 import (
 	"encoding/json"
 	"github.com/astaxie/beego/validation"
-	"vsphere_api/app/logging"
+	"vsphere-facade/app/logging"
 )
 
 type ReqParamError struct {

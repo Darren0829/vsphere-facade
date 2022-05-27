@@ -2,9 +2,9 @@ package vsphere
 
 import (
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper/computerresource"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper/computerresource"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) GetComputerResourceOSFamilies(computerResourceID string) []protocol.OSFamilyInfo {

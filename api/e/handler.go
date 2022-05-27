@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"runtime/debug"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils/stringutils"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils/stringutils"
 )
 
 func HandlerNotFound(c *gin.Context) {

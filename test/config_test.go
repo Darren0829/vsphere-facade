@@ -3,7 +3,7 @@ package test
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
-	"vsphere_api/config"
+	"vsphere-facade/config"
 )
 
 func Test_config_storagePolicies_read(t *testing.T) {

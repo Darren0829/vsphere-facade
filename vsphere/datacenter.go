@@ -2,10 +2,10 @@ package vsphere
 
 import (
 	"github.com/vmware/govmomi/object"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper/datacenter"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper/datacenter"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryDatacenters(q protocol.DatacenterQuery) []protocol.DatacenterInfo {

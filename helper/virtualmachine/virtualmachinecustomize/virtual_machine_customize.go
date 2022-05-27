@@ -6,9 +6,9 @@ import (
 	"github.com/vmware/govmomi/object"
 	"github.com/vmware/govmomi/vim25/types"
 	"net"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
-	"vsphere_api/helper/virtualmachine"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/virtualmachine"
 )
 
 type CustomizeParameter struct {

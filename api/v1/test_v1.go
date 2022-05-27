@@ -3,10 +3,10 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/api/e"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/vsphere/protocol"
 )
 
 // ReceiveCallBackData

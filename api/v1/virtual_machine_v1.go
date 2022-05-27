@@ -3,14 +3,14 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/api/security"
-	"vsphere_api/app/logging"
-	"vsphere_api/vsphere"
-	"vsphere_api/vsphere/callback"
-	"vsphere_api/vsphere/protocol"
-	"vsphere_api/vsphere/workerpool"
-	"vsphere_api/vsphere/workerpool/taskreceiver"
+	"vsphere-facade/api/e"
+	"vsphere-facade/api/security"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/vsphere"
+	"vsphere-facade/vsphere/callback"
+	"vsphere-facade/vsphere/protocol"
+	"vsphere-facade/vsphere/workerpool"
+	"vsphere-facade/vsphere/workerpool/taskreceiver"
 )
 
 type DeployReq struct {

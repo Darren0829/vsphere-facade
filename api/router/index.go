@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/vsphere/workerpool/taskreceiver"
+	"vsphere-facade/api/e"
+	"vsphere-facade/vsphere/workerpool/taskreceiver"
 )
 
 func Index(c *gin.Context) {

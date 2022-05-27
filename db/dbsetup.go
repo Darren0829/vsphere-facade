@@ -1,8 +1,8 @@
 package db
 
 import (
-	"vsphere_api/config"
-	"vsphere_api/db/badgerdb"
+	"vsphere-facade/config"
+	"vsphere-facade/db/badgerdb"
 )
 
 func Setup() {

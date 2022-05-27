@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/folder"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/folder"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheFolders(v []protocol.FolderInfo) {

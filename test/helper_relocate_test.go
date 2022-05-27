@@ -2,8 +2,8 @@ package test
 
 import (
 	"testing"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper/virtualmachine/virtualmachinerelocate"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper/virtualmachine/virtualmachinerelocate"
 )
 
 func Test_Relocate_ResourcePool(t *testing.T) {

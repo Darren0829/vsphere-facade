@@ -6,7 +6,7 @@ import (
 	"crypto/cipher"
 	"encoding/base64"
 	"errors"
-	"vsphere_api/app/logging"
+	"vsphere-facade/app/logging"
 )
 
 var (

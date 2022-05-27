@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"github.com/vmware/govmomi/object"
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/helper"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/helper/virtualmachine/virtualmachinecustomize"
-	"vsphere_api/helper/virtualmachine/virtualmachinereconfig"
-	"vsphere_api/helper/virtualmachine/virtualmachinerelocate"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/helper/virtualmachine/virtualmachinecustomize"
+	"vsphere-facade/helper/virtualmachine/virtualmachinereconfig"
+	"vsphere-facade/helper/virtualmachine/virtualmachinerelocate"
 )
 
 type VirtualMachineOperator struct {

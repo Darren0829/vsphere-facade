@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/datacenter"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/datacenter"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheDatacenters(v []protocol.DatacenterInfo) {

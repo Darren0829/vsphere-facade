@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"strings"
 	"time"
-	"vsphere_api/api/e"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/config"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/api/e"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/config"
+	"vsphere-facade/vsphere/protocol"
 )
 
 type Callbacker struct {

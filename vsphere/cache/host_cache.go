@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/hostsystem"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/hostsystem"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheHosts(v []protocol.HostInfo) {

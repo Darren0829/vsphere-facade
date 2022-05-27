@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/panjf2000/ants/v2"
 	"sync"
-	"vsphere_api/app/cache"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
+	"vsphere-facade/app/cache"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
 )
 
 type WorkerType string

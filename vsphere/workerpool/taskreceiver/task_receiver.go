@@ -3,10 +3,10 @@ package taskreceiver
 import (
 	"fmt"
 	"github.com/google/uuid"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/db/badgerdb"
-	"vsphere_api/vsphere/workerpool"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/db/badgerdb"
+	"vsphere-facade/vsphere/workerpool"
 )
 
 func Receive(reqType workerpool.WorkerType, req interface{}) string {

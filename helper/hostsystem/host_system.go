@@ -8,11 +8,11 @@ import (
 	"github.com/vmware/govmomi/view"
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
-	"vsphere_api/helper/clustercomputerresource"
-	"vsphere_api/helper/computerresource"
-	"vsphere_api/helper/datacenter"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/clustercomputerresource"
+	"vsphere-facade/helper/computerresource"
+	"vsphere-facade/helper/datacenter"
 )
 
 const Type = "HostSystem"

@@ -5,12 +5,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/api/security/bearer"
-	"vsphere_api/api/security/jwt"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/vsphere"
+	"vsphere-facade/api/e"
+	"vsphere-facade/api/security/bearer"
+	"vsphere-facade/api/security/jwt"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/vsphere"
 )
 
 const (

@@ -3,10 +3,10 @@ package startup
 import (
 	"encoding/json"
 	"errors"
-	"vsphere_api/app/logging"
-	"vsphere_api/vsphere/callback"
-	"vsphere_api/vsphere/protocol"
-	"vsphere_api/vsphere/workerpool/taskreceiver"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/vsphere/callback"
+	"vsphere-facade/vsphere/protocol"
+	"vsphere-facade/vsphere/workerpool/taskreceiver"
 )
 
 func Run() {

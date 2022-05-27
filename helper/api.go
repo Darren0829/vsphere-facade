@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
 )
 
 var apiCache = make(map[string]*API)

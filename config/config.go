@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/viper"
 	"log"
 	"testing"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/vsphere/protocol"
 )
 
 type Config struct {
@@ -79,8 +79,8 @@ func Setup() {
 	configDir := flag.String("config", ".", "config file dir")
 	flag.Parse()
 	viper.SetConfigType("yaml")
-	viper.SetConfigName("config")             // name of config file (without extension)
-	viper.AddConfigPath("$HOME/.vsphere_api") // call multiple times to add many search paths
+	viper.SetConfigName("config")                // name of config file (without extension)
+	viper.AddConfigPath("$HOME/.vsphere-facade") // call multiple times to add many search paths
 	viper.AddConfigPath(".")
 	viper.AddConfigPath("..")
 	viper.AddConfigPath(*configDir)

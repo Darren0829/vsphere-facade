@@ -1,8 +1,8 @@
 package datastore
 
 import (
-	"vsphere_api/helper"
-	"vsphere_api/helper/disk"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/disk"
 )
 
 const (

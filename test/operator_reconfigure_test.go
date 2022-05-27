@@ -4,8 +4,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/vmware/govmomi/vim25/types"
 	"testing"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/vsphere/workerpool"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/vsphere/workerpool"
 )
 
 // Test_reconfigure_cold_cpu

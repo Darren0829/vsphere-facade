@@ -3,9 +3,9 @@ package cache
 import (
 	"fmt"
 	"strings"
-	"vsphere_api/app/cache"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
+	"vsphere-facade/app/cache"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
 )
 
 const RefreshTicker = "RefreshTicker"

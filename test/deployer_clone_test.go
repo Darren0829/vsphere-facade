@@ -3,10 +3,10 @@ package test
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/helper/virtualmachine/virtualmachineclone"
-	"vsphere_api/helper/virtualmachine/virtualmachinecustomize"
-	"vsphere_api/vsphere/workerpool"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/helper/virtualmachine/virtualmachineclone"
+	"vsphere-facade/helper/virtualmachine/virtualmachinecustomize"
+	"vsphere-facade/vsphere/workerpool"
 )
 
 // Test_clone_default_value

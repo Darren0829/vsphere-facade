@@ -3,8 +3,8 @@ package test
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/helper/virtualmachine/virtualmachineclone"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/helper/virtualmachine/virtualmachineclone"
 )
 
 func Test_clone_1(t *testing.T) {

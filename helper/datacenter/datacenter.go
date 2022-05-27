@@ -7,8 +7,8 @@ import (
 	"github.com/vmware/govmomi/object"
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
 )
 
 const Type = "Datacenter"

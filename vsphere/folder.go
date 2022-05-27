@@ -2,10 +2,10 @@ package vsphere
 
 import (
 	"github.com/vmware/govmomi/vim25/mo"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper/folder"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper/folder"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryFolders(q protocol.FolderQuery) []protocol.FolderInfo {

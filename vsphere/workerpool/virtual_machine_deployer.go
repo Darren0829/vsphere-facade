@@ -5,14 +5,14 @@ import (
 	"github.com/vmware/govmomi/object"
 	"github.com/vmware/govmomi/vim25/types"
 	"time"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/helper"
-	"vsphere_api/helper/datastore"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/helper/virtualmachine/virtualmachineclone"
-	"vsphere_api/helper/virtualmachine/virtualmachinecustomize"
-	"vsphere_api/helper/virtualmachine/virtualmachinereconfig"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/datastore"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/helper/virtualmachine/virtualmachineclone"
+	"vsphere-facade/helper/virtualmachine/virtualmachinecustomize"
+	"vsphere-facade/helper/virtualmachine/virtualmachinereconfig"
 )
 
 type VirtualMachineDeployer struct {

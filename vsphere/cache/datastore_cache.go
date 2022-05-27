@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/datastore"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/datastore"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheDatastores(v []protocol.DatastoreInfo) {

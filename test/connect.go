@@ -1,12 +1,12 @@
 package test
 
 import (
-	"vsphere_api/app/cache"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/helper"
-	"vsphere_api/vsphere"
-	vCache "vsphere_api/vsphere/cache"
+	"vsphere-facade/app/cache"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/helper"
+	"vsphere-facade/vsphere"
+	vCache "vsphere-facade/vsphere/cache"
 )
 
 var vc35 = vsphere.Auth{

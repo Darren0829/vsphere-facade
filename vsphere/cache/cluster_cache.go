@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/computerresource"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/computerresource"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheClusters(v []protocol.ClusterInfo) {

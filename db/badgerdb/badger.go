@@ -3,9 +3,9 @@ package badgerdb
 import (
 	"github.com/dgraph-io/badger/v3"
 	"log"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/config"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/config"
 )
 
 var db *badger.DB

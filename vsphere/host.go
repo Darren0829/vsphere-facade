@@ -2,12 +2,12 @@ package vsphere
 
 import (
 	"github.com/vmware/govmomi/vim25/mo"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper/clustercomputerresource"
-	"vsphere_api/helper/computerresource"
-	"vsphere_api/helper/hostsystem"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper/clustercomputerresource"
+	"vsphere-facade/helper/computerresource"
+	"vsphere-facade/helper/hostsystem"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryHosts(q protocol.HostQuery) []protocol.HostInfo {

@@ -6,11 +6,11 @@ import (
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
 	"strings"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper/disk"
-	"vsphere_api/helper/hostsystem"
-	"vsphere_api/helper/virtualmachine"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper/disk"
+	"vsphere-facade/helper/hostsystem"
+	"vsphere-facade/helper/virtualmachine"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryVirtualMachines(q protocol.VirtualMachineQuery) []protocol.VirtualMachineInfo {

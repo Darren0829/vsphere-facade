@@ -2,11 +2,11 @@ package vsphere
 
 import (
 	"github.com/vmware/govmomi/vim25/mo"
-	"vsphere_api/app/logging"
-	"vsphere_api/app/utils"
-	"vsphere_api/helper/datastore"
-	"vsphere_api/helper/disk"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/helper/datastore"
+	"vsphere-facade/helper/disk"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (vc *VCenter) QueryDatastores(q protocol.DatastoreQuery) []protocol.DatastoreInfo {

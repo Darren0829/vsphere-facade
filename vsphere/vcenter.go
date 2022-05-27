@@ -3,12 +3,12 @@ package vsphere
 import (
 	"fmt"
 	"time"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/helper"
-	"vsphere_api/vsphere/cache"
-	"vsphere_api/vsphere/protocol"
-	"vsphere_api/vsphere/workerpool"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/helper"
+	"vsphere-facade/vsphere/cache"
+	"vsphere-facade/vsphere/protocol"
+	"vsphere-facade/vsphere/workerpool"
 )
 
 type Auth struct {

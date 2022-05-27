@@ -9,7 +9,7 @@ import (
 	"github.com/vmware/govmomi/vim25/methods"
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/logging"
+	"vsphere-facade/app/logging"
 )
 
 // EnvironmentBrowser is a higher-level interface to a specific object's

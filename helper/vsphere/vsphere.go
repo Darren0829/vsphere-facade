@@ -9,8 +9,8 @@ import (
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
 	"time"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
 )
 
 func GetPbmClient(api *helper.API, ctx context.Context) *pbm.Client {

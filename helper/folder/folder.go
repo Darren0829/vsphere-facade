@@ -8,9 +8,9 @@ import (
 	"github.com/vmware/govmomi/view"
 	"github.com/vmware/govmomi/vim25/mo"
 	"github.com/vmware/govmomi/vim25/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
-	"vsphere_api/helper/datacenter"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
+	"vsphere-facade/helper/datacenter"
 )
 
 const Type = "Folder"

@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/network"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/network"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheNetworks(v []protocol.NetworkInfo) {

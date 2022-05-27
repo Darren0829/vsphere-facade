@@ -3,7 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"reflect"
-	"vsphere_api/app/logging"
+	"vsphere-facade/app/logging"
 )
 
 func SliceContain(src, elem interface{}) bool {

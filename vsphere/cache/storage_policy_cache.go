@@ -1,7 +1,7 @@
 package cache
 
 import (
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/vsphere/protocol"
 )
 
 const StoragePolicyCacheKey = "StoragePolicy"

@@ -3,11 +3,11 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/api/security"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/vsphere"
+	"vsphere-facade/api/e"
+	"vsphere-facade/api/security"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/vsphere"
 )
 
 type CleanCacheKey struct {

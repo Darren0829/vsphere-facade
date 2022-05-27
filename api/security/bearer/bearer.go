@@ -3,9 +3,9 @@ package bearer
 import (
 	"encoding/json"
 	"fmt"
-	"vsphere_api/api/e"
-	"vsphere_api/app/utils"
-	"vsphere_api/vsphere"
+	"vsphere-facade/api/e"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/vsphere"
 )
 
 const Type = "bearer"

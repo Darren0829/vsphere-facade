@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/vmware/govmomi/pbm"
 	"github.com/vmware/govmomi/pbm/types"
-	"vsphere_api/app/logging"
-	"vsphere_api/helper"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/helper"
 )
 
 func GetPolicies(c *pbm.Client) *[]types.PbmProfile {

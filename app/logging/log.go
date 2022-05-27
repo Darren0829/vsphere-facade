@@ -7,9 +7,9 @@ import (
 	"go.uber.org/zap/zapcore"
 	"os"
 	"strings"
-	"vsphere_api/app/utils/intutils"
-	"vsphere_api/app/utils/stringutils"
-	"vsphere_api/config"
+	"vsphere-facade/app/utils/intutils"
+	"vsphere-facade/app/utils/stringutils"
+	"vsphere-facade/config"
 )
 
 var log *zap.Logger
@@ -39,11 +39,11 @@ func Setup() {
 	})
 
 	infoFileWriteSyncer := zapcore.AddSync(&lumberjack.Logger{
-		Filename:   stringutils.EPTThen(strings.TrimSuffix(config.G.Server.Log.Path, "/"), ".") + "/vsphere_api.log", //日志文件存放目录，如果文件夹不存在会自动创建
-		MaxSize:    intutils.ZeroThen(config.G.Server.Log.MaxSize, 1),                                                //文件大小限制,单位MB
-		MaxBackups: intutils.ZeroThen(config.G.Server.Log.MaxBackups, 10),                                            //最大保留日志文件数量
-		MaxAge:     intutils.ZeroThen(config.G.Server.Log.MaxAge, 7),                                                 //日志文件保留天数
-		Compress:   false,                                                                                            //是否压缩处理
+		Filename:   stringutils.EPTThen(strings.TrimSuffix(config.G.Server.Log.Path, "/"), ".") + "/vsphere-facade.log", //日志文件存放目录，如果文件夹不存在会自动创建
+		MaxSize:    intutils.ZeroThen(config.G.Server.Log.MaxSize, 1),                                                   //文件大小限制,单位MB
+		MaxBackups: intutils.ZeroThen(config.G.Server.Log.MaxBackups, 10),                                               //最大保留日志文件数量
+		MaxAge:     intutils.ZeroThen(config.G.Server.Log.MaxAge, 7),                                                    //日志文件保留天数
+		Compress:   false,                                                                                               //是否压缩处理
 	})
 	infoFileCore := zapcore.NewCore(encoder, zapcore.NewMultiWriteSyncer(infoFileWriteSyncer, zapcore.AddSync(os.Stdout)), priority) //第三个及之后的参数为写入文件的日志级别,ErrorLevel模式只记录error级别的日志
 	coreArr = append(coreArr, infoFileCore)

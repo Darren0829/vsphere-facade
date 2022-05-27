@@ -3,15 +3,15 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"vsphere_api/api/router"
-	"vsphere_api/api/security"
-	"vsphere_api/app/cache"
-	"vsphere_api/app/logging"
-	"vsphere_api/config"
-	"vsphere_api/db"
-	"vsphere_api/helper"
-	"vsphere_api/startup"
-	vCache "vsphere_api/vsphere/cache"
+	"vsphere-facade/api/router"
+	"vsphere-facade/api/security"
+	"vsphere-facade/app/cache"
+	"vsphere-facade/app/logging"
+	"vsphere-facade/config"
+	"vsphere-facade/db"
+	"vsphere-facade/helper"
+	"vsphere-facade/startup"
+	vCache "vsphere-facade/vsphere/cache"
 )
 
 func init() {

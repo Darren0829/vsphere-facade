@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"vsphere_api/helper/resourcepool"
-	"vsphere_api/vsphere/protocol"
+	"vsphere-facade/helper/resourcepool"
+	"vsphere-facade/vsphere/protocol"
 )
 
 func (c VCCache) CacheResourcePools(v []protocol.ResourcePoolInfo) {

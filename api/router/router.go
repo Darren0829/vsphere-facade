@@ -5,10 +5,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"io/fs"
 	"net/http"
-	"vsphere_api/api/e"
-	"vsphere_api/api/security"
-	v1 "vsphere_api/api/v1"
-	_ "vsphere_api/docs"
+	"vsphere-facade/api/e"
+	"vsphere-facade/api/security"
+	v1 "vsphere-facade/api/v1"
+	_ "vsphere-facade/docs"
 )
 
 func InitRouter() *gin.Engine {

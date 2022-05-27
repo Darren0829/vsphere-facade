@@ -2,12 +2,12 @@ package jwt
 
 import (
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v4"
 	"time"
-	"vsphere_api/api/e"
-	"vsphere_api/app/utils"
-	"vsphere_api/config"
-	"vsphere_api/vsphere"
+	"vsphere-facade/api/e"
+	"vsphere-facade/app/utils"
+	"vsphere-facade/config"
+	"vsphere-facade/vsphere"
 )
 
 var jwtSecret []byte
@@ -34,7 +34,7 @@ func (t Token) Generate(a vsphere.Auth) (string, error) {
 		a,
 		jwt.StandardClaims{
 			ExpiresAt: expireTime.Unix(),
-			Issuer:    "vsphere_api",
+			Issuer:    "vsphere-facade",
 		},
 	}
 	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
