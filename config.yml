@@ -1,0 +1,60 @@
+server:
+  port: 8829
+  mode: debug # debug, release
+  log:
+    path: "/Users/dengzhehang/projects/QINGCLOUD/iFCLOUD_on_QXP/log"
+    level: debug # DEBUG, INFO, WARN, ERROR, FATAL, PANIC
+    maxSize: 1 # MB
+    maxBackups: 1
+    maxAge: 1
+    enableFullPath: false
+  db:
+    badger:
+      path: "/Users/dengzhehang/projects/QINGCLOUD/iFCLOUD_on_QXP/db_data"
+
+app:
+  token:
+    type: bearer
+
+vsphere:
+  default:
+    deployment:
+      adapterType: vmxnet3
+      diskMode: persistent
+      flag:
+        enableLogging: true
+      storagePolicies:
+        80f4db34-f752-4088-90e0-d0e8ab877b13:
+          VMFS: "f4e5bade-15a2-4805-bf8e-52318c4ce443"
+          VSAN: "p0012"
+        vc0002:
+          VMFS: "p0021"
+          VSAN: "p0022"
+    operation:
+      shutdownFirst: true
+    callback:
+      httpPost:
+        url: "http://localhost:8829/api/v1/test_call_back"
+        headers:
+          - token: "wmZnEhqD7nMgq3NNpR0ke8FAxygvTfpo82BM5wEMlewYwMKCn40K3Dtc9L7Rr8DKDGZjS55HdGD7AQqIs29gLppDmnN0H/bMZDPFbzkUu5c4565e+WPbIgM1Qi5JcsWL5iS35Sex9VRmBrh27ArJUg=="
+  routineCount:
+    operation: 2
+    deployment: 2
+
+  timeout:
+    api: 10
+    waitForClone: 10
+    waitForIp: 10
+    waitForNet: 10
+  cache:
+    enable: true
+    refreshDuration: 30 # min
+    ignore:
+      - vcid: "vc01"
+        items:
+          - "a1"
+          - "a2"
+      - vcid: "vc02"
+        items:
+          - "b1"
+          - "b2"

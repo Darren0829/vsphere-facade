@@ -1,0 +1,1970 @@
+basePath: /api
+definitions:
+  e.Response:
+    properties:
+      code:
+        type: string
+      data: {}
+      message:
+        type: string
+    type: object
+  protocol.CallbackReq:
+    properties:
+      httpPost:
+        $ref: '#/definitions/protocol.Http'
+    type: object
+  protocol.CallbackRes:
+    properties:
+      data: {}
+      requestId:
+        type: string
+    type: object
+  protocol.ClusterInfo:
+    properties:
+      datacenterId:
+        type: string
+      drsEnabled:
+        type: boolean
+      id:
+        type: string
+      name:
+        type: string
+      resourcePoolId:
+        type: string
+    type: object
+  protocol.DatacenterInfo:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  protocol.DatastoreInfo:
+    properties:
+      accessible:
+        type: boolean
+      capacity:
+        type: integer
+      datacenterId:
+        type: string
+      freeSpace:
+        type: integer
+      id:
+        type: string
+      name:
+        type: string
+      supportDiskType:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      uncommitted:
+        type: integer
+    type: object
+  protocol.DiskInfo:
+    properties:
+      datastoreId:
+        type: string
+      format:
+        type: string
+      id:
+        type: string
+      key:
+        type: integer
+      mode:
+        type: string
+      sharing:
+        type: string
+      size:
+        type: integer
+    type: object
+  protocol.FolderInfo:
+    properties:
+      datacenterID:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      parentId:
+        type: string
+    type: object
+  protocol.Http:
+    properties:
+      headers:
+        additionalProperties:
+          type: string
+        type: object
+      url:
+        type: string
+    type: object
+  protocol.IpInfo:
+    properties:
+      ipAddress:
+        type: string
+      state:
+        type: string
+    type: object
+  protocol.NetworkInfo:
+    properties:
+      accessible:
+        type: boolean
+      datacenterId:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+    type: object
+  protocol.NetworkInterfaceInfo:
+    properties:
+      adapterType:
+        type: string
+      id:
+        type: string
+      ipInfo:
+        items:
+          $ref: '#/definitions/protocol.IpInfo'
+        type: array
+      key:
+        type: integer
+      macAddress:
+        type: string
+      networkId:
+        type: string
+    type: object
+  protocol.OSFamilyInfo:
+    properties:
+      family:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      supportedCPUs:
+        type: integer
+      supportedMaxMen:
+        type: integer
+      supportedMinMen:
+        type: integer
+    type: object
+  protocol.ResourcePoolInfo:
+    properties:
+      availableCpu:
+        type: integer
+      availableMemory:
+        type: integer
+      clusterId:
+        type: string
+      datacenterId:
+        type: string
+      hostId:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      parentId:
+        type: string
+      parentType:
+        type: string
+    type: object
+  protocol.StoragePolicyInfo:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  protocol.TemplateInfo:
+    properties:
+      IPAddress:
+        type: string
+      clusterId:
+        type: string
+      createDate:
+        type: string
+      dataDisks:
+        items:
+          $ref: '#/definitions/protocol.DiskInfo'
+        type: array
+      datacenterId:
+        type: string
+      description:
+        type: string
+      folderId:
+        type: string
+      hostId:
+        type: string
+      id:
+        type: string
+      instanceUUID:
+        type: string
+      memoryMB:
+        type: integer
+      name:
+        type: string
+      networkInterfaces:
+        items:
+          $ref: '#/definitions/protocol.NetworkInterfaceInfo'
+        type: array
+      numCPU:
+        type: integer
+      numCoresPerSocket:
+        type: integer
+      osFamily:
+        type: string
+      osName:
+        type: string
+      resourcePoolId:
+        type: string
+      sysDisk:
+        $ref: '#/definitions/protocol.DiskInfo'
+      toolsHasInstalled:
+        type: boolean
+      uuid:
+        type: string
+    type: object
+  protocol.VirtualMachineInfo:
+    properties:
+      IPAddress:
+        type: string
+      clusterId:
+        type: string
+      createDate:
+        type: string
+      dataDisks:
+        items:
+          $ref: '#/definitions/protocol.DiskInfo'
+        type: array
+      datacenterId:
+        type: string
+      description:
+        type: string
+      folderId:
+        type: string
+      hostId:
+        type: string
+      hostname:
+        type: string
+      id:
+        type: string
+      instanceUUID:
+        type: string
+      ip_address:
+        type: string
+      memoryMB:
+        type: integer
+      name:
+        type: string
+      networkInterfaces:
+        items:
+          $ref: '#/definitions/protocol.NetworkInterfaceInfo'
+        type: array
+      numCPU:
+        type: integer
+      numCoresPerSocket:
+        type: integer
+      osFamily:
+        type: string
+      osName:
+        type: string
+      power_state:
+        type: string
+      resourcePoolId:
+        type: string
+      sysDisk:
+        $ref: '#/definitions/protocol.DiskInfo'
+      tools_status:
+        type: string
+      toolsHasInstalled:
+        type: boolean
+      uuid:
+        type: string
+    type: object
+  v1.CleanCacheKey:
+    properties:
+      keys:
+        items:
+          type: string
+        type: array
+    type: object
+  v1.DeployReq:
+    properties:
+      callback:
+        $ref: '#/definitions/protocol.CallbackReq'
+      config:
+        $ref: '#/definitions/workerpool.DeployParameter'
+      timeout:
+        $ref: '#/definitions/workerpool.TimeoutSetting'
+    type: object
+  v1.DeployRes:
+    properties:
+      requestId:
+        type: string
+    type: object
+  v1.DescriptionReq:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+    type: object
+  v1.DiskReconfigureReq:
+    properties:
+      add:
+        items:
+          properties:
+            datastoreId:
+              type: string
+            format:
+              type: string
+            mode:
+              type: string
+            sharing:
+              type: string
+            size:
+              type: integer
+            storagePolicyID:
+              type: string
+          type: object
+        type: array
+      callBack:
+        $ref: '#/definitions/protocol.CallbackReq'
+      edit:
+        items:
+          $ref: '#/definitions/virtualmachinereconfig.EditDiskParameter'
+        type: array
+      id:
+        type: string
+      remove:
+        items:
+          type: integer
+        type: array
+    type: object
+  v1.NicReconfigureReq:
+    properties:
+      add:
+        items:
+          properties:
+            adapterType:
+              type: string
+            allocation:
+              $ref: '#/definitions/virtualmachinereconfig.NetworkAllocation'
+            dnsDomain:
+              type: string
+            dnsServerList:
+              items:
+                type: string
+              type: array
+            gateway:
+              items:
+                type: string
+              type: array
+            ipv4:
+              $ref: '#/definitions/virtualmachinecustomize.NicIPv4Setting'
+            ipv6:
+              $ref: '#/definitions/virtualmachinecustomize.NicIPv6Setting'
+            macAddress:
+              type: string
+            networkId:
+              type: string
+            subnetMask:
+              type: integer
+          type: object
+        type: array
+      callBack:
+        $ref: '#/definitions/protocol.CallbackReq'
+      edit:
+        items:
+          properties:
+            dnsDomain:
+              type: string
+            dnsServerList:
+              items:
+                type: string
+              type: array
+            gateway:
+              items:
+                type: string
+              type: array
+            ipv4:
+              $ref: '#/definitions/virtualmachinecustomize.NicIPv4Setting'
+            ipv6:
+              $ref: '#/definitions/virtualmachinecustomize.NicIPv6Setting'
+            key:
+              type: integer
+            mac_address:
+              type: string
+            network_id:
+              type: string
+            subnetMask:
+              type: integer
+          type: object
+        type: array
+      id:
+        type: string
+      remove:
+        items:
+          type: integer
+        type: array
+    type: object
+  v1.OperationReq:
+    properties:
+      callback:
+        $ref: '#/definitions/protocol.CallbackReq'
+      ids:
+        items:
+          type: string
+        type: array
+    type: object
+  v1.OperationRes:
+    properties:
+      requestId:
+        type: string
+    type: object
+  v1.ReconfigureReq:
+    properties:
+      MemoryMB:
+        type: integer
+      callBack:
+        $ref: '#/definitions/protocol.CallbackReq'
+      id:
+        type: string
+      numCPU:
+        type: integer
+      numCoresPerSocket:
+        type: integer
+    type: object
+  v1.RenameReq:
+    properties:
+      id:
+        type: string
+      newName:
+        type: string
+    type: object
+  v1.TemplateQuery:
+    properties:
+      datacenterID:
+        type: string
+      folderID:
+        type: string
+      ids:
+        items:
+          type: string
+        type: array
+    type: object
+  v1.VirtualMachineQuery:
+    properties:
+      clusterId:
+        type: string
+      datacenterId:
+        type: string
+      folderId:
+        type: string
+      hostId:
+        type: string
+      ids:
+        items:
+          type: string
+        type: array
+    type: object
+  virtualmachineclone.LocationParameter:
+    properties:
+      clusterId:
+        type: string
+      datacenterId:
+        type: string
+      datastoreId:
+        type: string
+      folderId:
+        type: string
+      hostId:
+        type: string
+      resourcePoolId:
+        type: string
+    type: object
+  virtualmachinecustomize.GlobalIPSetting:
+    properties:
+      dnsServerList:
+        items:
+          type: string
+        type: array
+      dnsSuffixList:
+        items:
+          type: string
+        type: array
+      gateway:
+        type: string
+    type: object
+  virtualmachinecustomize.IPv6:
+    properties:
+      ipaddress:
+        type: string
+      static:
+        type: boolean
+      subnetMask:
+        type: integer
+    type: object
+  virtualmachinecustomize.LinuxSettingParameter:
+    properties:
+      domain:
+        type: string
+      hostName:
+        type: string
+      hwClockUTC:
+        type: boolean
+      scriptText:
+        type: string
+      timeZone:
+        type: string
+    type: object
+  virtualmachinecustomize.NicIPv4Setting:
+    properties:
+      ipAddress:
+        type: string
+      static:
+        type: boolean
+    type: object
+  virtualmachinecustomize.NicIPv6Setting:
+    properties:
+      IPv6s:
+        items:
+          $ref: '#/definitions/virtualmachinecustomize.IPv6'
+        type: array
+      gateways:
+        items:
+          type: string
+        type: array
+    type: object
+  virtualmachinecustomize.WindowsSettingParameter:
+    properties:
+      autoLogon:
+        type: boolean
+      autoLogonCount:
+        type: integer
+      commands:
+        items:
+          type: string
+        type: array
+      computerName:
+        type: string
+      joinDomain:
+        properties:
+          domain:
+            type: string
+          domainAdmin:
+            type: string
+          domainAdminPassword:
+            type: string
+        type: object
+      joinWorkGroup:
+        type: string
+      password:
+        type: string
+      productId:
+        type: string
+      register:
+        properties:
+          fullName:
+            type: string
+          orgName:
+            type: string
+        type: object
+      timeZone:
+        type: integer
+    type: object
+  virtualmachinereconfig.AllocationParameter:
+    properties:
+      expandableReservation:
+        type: boolean
+      level:
+        type: string
+      limit:
+        type: integer
+      overheadLimit:
+        type: integer
+      reservation:
+        type: integer
+      shares:
+        type: integer
+    type: object
+  virtualmachinereconfig.CpuParameter:
+    properties:
+      allocation:
+        $ref: '#/definitions/virtualmachinereconfig.AllocationParameter'
+      cpuHotAddEnabled:
+        type: boolean
+      cpuHotRemoveEnabled:
+        type: boolean
+      numCPU:
+        type: integer
+      numCoresPerSocket:
+        type: integer
+    type: object
+  virtualmachinereconfig.EditDiskParameter:
+    properties:
+      key:
+        type: integer
+      mode:
+        type: string
+      sharing:
+        type: string
+      size:
+        type: integer
+      storagePolicyID:
+        type: string
+    type: object
+  virtualmachinereconfig.MemoryParameter:
+    properties:
+      allocation:
+        $ref: '#/definitions/virtualmachinereconfig.AllocationParameter'
+      memoryHotAddEnabled:
+        type: boolean
+      memoryMB:
+        type: integer
+    type: object
+  virtualmachinereconfig.NetworkAllocation:
+    properties:
+      level:
+        type: string
+      limit:
+        type: integer
+      reservation:
+        type: integer
+      shares:
+        type: integer
+    type: object
+  vsphere.Auth:
+    properties:
+      address:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  workerpool.DataDisk:
+    properties:
+      datastoreId:
+        type: string
+      format:
+        type: string
+      mode:
+        type: string
+      size:
+        type: integer
+      storage_policy_id:
+        type: string
+    type: object
+  workerpool.DeployParameter:
+    properties:
+      cpu:
+        $ref: '#/definitions/virtualmachinereconfig.CpuParameter'
+      dataDisks:
+        items:
+          $ref: '#/definitions/workerpool.DataDisk'
+        type: array
+      globalIp:
+        $ref: '#/definitions/virtualmachinecustomize.GlobalIPSetting'
+      location:
+        $ref: '#/definitions/virtualmachineclone.LocationParameter'
+      memory:
+        $ref: '#/definitions/virtualmachinereconfig.MemoryParameter'
+      name:
+        type: string
+      networkInterfaces:
+        items:
+          $ref: '#/definitions/workerpool.NetworkInterface'
+        type: array
+      os:
+        $ref: '#/definitions/workerpool.OS'
+      template:
+        $ref: '#/definitions/workerpool.Template'
+      waitForIp:
+        type: string
+    type: object
+  workerpool.NetworkInterface:
+    properties:
+      adapterType:
+        type: string
+      allocation:
+        $ref: '#/definitions/virtualmachinereconfig.NetworkAllocation'
+      dnsDomain:
+        type: string
+      dnsServerList:
+        items:
+          type: string
+        type: array
+      gateway:
+        items:
+          type: string
+        type: array
+      ipv4:
+        $ref: '#/definitions/virtualmachinecustomize.NicIPv4Setting'
+      ipv6:
+        $ref: '#/definitions/virtualmachinecustomize.NicIPv6Setting'
+      macAddress:
+        type: string
+      networkId:
+        type: string
+      subnetMask:
+        type: integer
+    type: object
+  workerpool.OS:
+    properties:
+      linux:
+        $ref: '#/definitions/virtualmachinecustomize.LinuxSettingParameter'
+      windows:
+        $ref: '#/definitions/virtualmachinecustomize.WindowsSettingParameter'
+    type: object
+  workerpool.SysDisk:
+    properties:
+      datastoreId:
+        type: string
+      format:
+        type: string
+      mode:
+        type: string
+      size:
+        type: integer
+      storage_policy_id:
+        type: string
+    type: object
+  workerpool.Template:
+    properties:
+      dataDisks:
+        items:
+          $ref: '#/definitions/workerpool.DataDisk'
+        type: array
+      id:
+        type: string
+      sysDisk:
+        $ref: '#/definitions/workerpool.SysDisk'
+    type: object
+  workerpool.TimeoutSetting:
+    properties:
+      waitForClone:
+        type: integer
+      waitForIP:
+        type: integer
+      waitForNet:
+        type: integer
+    type: object
+host: localhost:8829
+info:
+  contact: {}
+  description: vmware vsphere api
+  title: QXP vSphere API
+  version: "1.0"
+paths:
+  /token:
+    post:
+      consumes:
+      - application/json
+      description: 传入vcenter认证信息，获取令牌
+      parameters:
+      - description: 认证信息
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/vsphere.Auth'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":"2000","message":"成功","data":{"token":""}}'
+          schema:
+            type: string
+        "400":
+          description: '{"code":"","message":"失败","data":{}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"","message":"失败","data":{}'
+          schema:
+            type: string
+      summary: 获取令牌
+      tags:
+      - 认证
+  /v1/caches:
+    delete:
+      consumes:
+      - application/json
+      description: 清除缓存
+      parameters:
+      - description: 需要清除的缓存Key，空为全部
+        in: body
+        name: c
+        schema:
+          $ref: '#/definitions/v1.CleanCacheKey'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/e.Response'
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 清除缓存
+      tags:
+      - 缓存
+    post:
+      consumes:
+      - application/json
+      description: 创建缓存
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/e.Response'
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建缓存
+      tags:
+      - 缓存
+  /v1/clusters:
+    get:
+      consumes:
+      - application/json
+      description: 集群查询
+      parameters:
+      - description: 集群ID
+        in: query
+        items:
+          type: string
+        name: ids
+        type: array
+      - description: 数据中心ID
+        in: query
+        name: datacenterId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.ClusterInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 集群查询
+      tags:
+      - 基础设施
+  /v1/clusters/{clusterId}/os_families:
+    get:
+      consumes:
+      - application/json
+      description: 集群支持的操作系统
+      parameters:
+      - description: 集群ID
+        in: path
+        name: clusterID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.OSFamilyInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 集群支持的操作系统
+      tags:
+      - 基础设施
+  /v1/datacenters:
+    get:
+      consumes:
+      - application/json
+      description: 数据中心查询
+      parameters:
+      - description: 数据中心ID
+        in: query
+        name: ids
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.DatacenterInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 数据中心查询
+      tags:
+      - 基础设施
+  /v1/datastores:
+    get:
+      consumes:
+      - application/json
+      description: 存储查询
+      parameters:
+      - description: 存储ID
+        in: query
+        items:
+          type: string
+        name: ids
+        type: array
+      - description: 数据中心ID
+        in: query
+        name: datacenterId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.DatastoreInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 存储查询
+      tags:
+      - 基础设施
+  /v1/folders:
+    get:
+      consumes:
+      - application/json
+      description: 文件夹查询
+      parameters:
+      - description: 文件夹ID
+        in: query
+        items:
+          type: string
+        name: ids
+        type: array
+      - description: 数据中心ID
+        in: query
+        name: datacenterId
+        type: string
+      - description: 文件夹ID
+        in: query
+        name: folderID
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.FolderInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 文件夹查询
+      tags:
+      - 基础设施
+  /v1/hosts:
+    get:
+      consumes:
+      - application/json
+      description: 主机查询
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.OSFamilyInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 主机查询
+      tags:
+      - 基础设施
+  /v1/hosts/{hostId}/os_families:
+    get:
+      consumes:
+      - application/json
+      description: 主机支持的操作系统
+      parameters:
+      - description: 主机ID
+        in: path
+        name: hostID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.OSFamilyInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 主机支持的操作系统
+      tags:
+      - 基础设施
+  /v1/networks:
+    get:
+      consumes:
+      - application/json
+      description: 网络查询
+      parameters:
+      - description: 网络ID
+        in: query
+        items:
+          type: string
+        name: ids
+        type: array
+      - description: 数据中心ID
+        in: query
+        name: datacenterId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.NetworkInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 网络查询
+      tags:
+      - 基础设施
+  /v1/resource_pools:
+    get:
+      consumes:
+      - application/json
+      description: 资源池查询
+      parameters:
+      - description: 资源池ID
+        in: query
+        items:
+          type: string
+        name: ids
+        type: array
+      - description: 数据中心ID
+        in: query
+        name: datacenterId
+        type: string
+      - description: 集群ID
+        in: query
+        name: clusterId
+        type: string
+      - description: 主机ID
+        in: query
+        name: hostId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.ResourcePoolInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 资源池查询
+      tags:
+      - 基础设施
+  /v1/storage_policies:
+    get:
+      consumes:
+      - application/json
+      description: 存储策略查询
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.StoragePolicyInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 存储策略查询
+      tags:
+      - 基础设施
+  /v1/templates:
+    get:
+      consumes:
+      - application/json
+      description: 查询模板
+      parameters:
+      - description: 查询参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.TemplateQuery'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.TemplateInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 查询模板
+      tags:
+      - 模版
+  /v1/test_call_back:
+    post:
+      consumes:
+      - application/json
+      description: 测试http回调
+      parameters:
+      - description: 回调结果
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/protocol.CallbackRes'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 测试http回调
+      tags:
+      - 测试
+  /v1/virtual_machines:
+    delete:
+      consumes:
+      - application/json
+      description: 删除虚拟机
+      parameters:
+      - description: 删除虚拟机参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除虚拟机
+      tags:
+      - 虚拟机
+    get:
+      consumes:
+      - application/json
+      description: 查询虚拟机
+      parameters:
+      - description: 查询参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.VirtualMachineQuery'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/protocol.VirtualMachineInfo'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 查询虚拟机
+      tags:
+      - 虚拟机
+    post:
+      consumes:
+      - application/json
+      description: 创建虚拟机
+      parameters:
+      - description: 创建参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.DeployReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.DeployRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建虚拟机
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/{id}/relocate:
+    post:
+      consumes:
+      - application/json
+      description: 虚拟机迁移
+      parameters:
+      - description: 虚拟机迁移参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 虚拟机迁移
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/{id}/snapshots:
+    delete:
+      consumes:
+      - application/json
+      description: 删除快照
+      parameters:
+      - description: 创建参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除快照
+      tags:
+      - 快照
+    post:
+      consumes:
+      - application/json
+      description: 创建快照
+      parameters:
+      - description: 创建参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建快照
+      tags:
+      - 快照
+  /v1/virtual_machines/description:
+    post:
+      consumes:
+      - application/json
+      description: 修改备注
+      parameters:
+      - description: 请求参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.DescriptionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/e.Response'
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 修改备注
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/power_off:
+    post:
+      consumes:
+      - application/json
+      description: 关闭电源
+      parameters:
+      - description: 关闭电源参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 关闭电源
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/power_on:
+    post:
+      consumes:
+      - application/json
+      description: 开机
+      parameters:
+      - description: 开机参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 开机
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/reconfigure:
+    post:
+      consumes:
+      - application/json
+      description: 修改虚拟机配置
+      parameters:
+      - description: 修改虚拟机配置参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.ReconfigureReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 修改虚拟机配置
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/reconfigure_disk:
+    post:
+      consumes:
+      - application/json
+      description: 修改虚拟机硬盘
+      parameters:
+      - description: 修改虚拟机硬盘参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.DiskReconfigureReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 修改虚拟机硬盘
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/reconfigure_nic:
+    post:
+      consumes:
+      - application/json
+      description: 修改虚拟机网卡
+      parameters:
+      - description: 修改虚拟机网卡参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.NicReconfigureReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 修改虚拟机网卡
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/rename:
+    post:
+      consumes:
+      - application/json
+      description: 重命名
+      parameters:
+      - description: 请求参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.RenameReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/e.Response'
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 重命名
+      tags:
+      - 虚拟机
+  /v1/virtual_machines/shutdown:
+    post:
+      consumes:
+      - application/json
+      description: 关闭操作系统
+      parameters:
+      - description: 关闭操作系统参数
+        in: body
+        name: c
+        required: true
+        schema:
+          $ref: '#/definitions/v1.OperationReq'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            allOf:
+            - $ref: '#/definitions/e.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/v1.OperationRes'
+                  type: array
+              type: object
+        "400":
+          description: '{"code":"400x","message":"失败"}'
+          schema:
+            type: string
+        "401":
+          description: '{"code":"401x","message":"失败"}'
+          schema:
+            type: string
+        "500":
+          description: '{"code":"500x","message":"失败"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 关闭操作系统
+      tags:
+      - 虚拟机
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: token
+    type: apiKey
+swagger: "2.0"
