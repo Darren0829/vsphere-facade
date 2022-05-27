@@ -1,7 +1,7 @@
 # STAGE build
-FROM golang:1.16.3 AS build
+FROM golang:1.18.2 AS build
 
-MAINTAINER Dengzhehang "darrendeng@yuninfy.com"
+MAINTAINER Dengzhehang "dengzhehang@outlook.com"
 
 ENV GO111MODULE=on \
     CGO_ENABLED="0" \
@@ -15,7 +15,7 @@ COPY . .
 
 RUN mkdir conf
 
-RUN go build -o vsphere_api .
+RUN go build -o vsphere-facade .
 
 # STAGE deploy
 FROM scratch
@@ -26,4 +26,4 @@ COPY --from=build /app /app
 
 EXPOSE 8829
 
-CMD  ["/app/vsphere_api", "-config=/app/conf"]
+CMD  ["/app/vsphere-facade", "-config=/app/conf"]
