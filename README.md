@@ -25,6 +25,7 @@
 - [x] Batch power off virtual machines
 - [x] Change virtual machine's name
 - [x] Change virtual machine's description
-- [x] Change virtual machine's nics
+- [x] Change virtual machine's network interfaces
 - [x] Change virtual machine's disks
 - [x] Change virtual machine's cpu and memory
+- [x] It calls back when you request an api of operation
