@@ -24,9 +24,9 @@ func init() {
 	db.Setup()
 }
 
-// @title        QXP vSphere API
+// @title        vSphere Facade
 // @version      1.0
-// @description  vmware vsphere api
+// @description  VMWare vSphere Facade API
 
 // @host      localhost:8829
 // @BasePath  /api

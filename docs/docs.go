@@ -2024,7 +2024,13 @@ const docTemplate = `{
         "protocol.CallbackRes": {
             "type": "object",
             "properties": {
+                "code": {
+                    "type": "string"
+                },
                 "data": {},
+                "message": {
+                    "type": "string"
+                },
                 "requestId": {
                     "type": "string"
                 }
@@ -3012,7 +3018,7 @@ const docTemplate = `{
                 "size": {
                     "type": "integer"
                 },
-                "storage_policy_id": {
+                "storagePolicyId": {
                     "type": "string"
                 }
             }
@@ -3028,6 +3034,9 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/workerpool.DataDisk"
                     }
+                },
+                "flag": {
+                    "$ref": "#/definitions/workerpool.Flag"
                 },
                 "globalIp": {
                     "$ref": "#/definitions/virtualmachinecustomize.GlobalIPSetting"
@@ -3050,11 +3059,22 @@ const docTemplate = `{
                 "os": {
                     "$ref": "#/definitions/workerpool.OS"
                 },
+                "powerOn": {
+                    "type": "boolean"
+                },
                 "template": {
                     "$ref": "#/definitions/workerpool.Template"
                 },
                 "waitForIp": {
                     "type": "string"
+                }
+            }
+        },
+        "workerpool.Flag": {
+            "type": "object",
+            "properties": {
+                "enableLogging": {
+                    "type": "boolean"
                 }
             }
         },
@@ -3125,7 +3145,7 @@ const docTemplate = `{
                 "size": {
                     "type": "integer"
                 },
-                "storage_policy_id": {
+                "storagePolicyId": {
                     "type": "string"
                 }
             }
@@ -3177,8 +3197,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8829",
 	BasePath:         "/api",
 	Schemes:          []string{},
-	Title:            "QXP vSphere API",
-	Description:      "vmware vsphere api",
+	Title:            "vSphere Facade",
+	Description:      "VMWare vSphere Facade API",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

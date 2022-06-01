@@ -15,7 +15,11 @@ definitions:
     type: object
   protocol.CallbackRes:
     properties:
+      code:
+        type: string
       data: {}
+      message:
+        type: string
       requestId:
         type: string
     type: object
@@ -659,7 +663,7 @@ definitions:
         type: string
       size:
         type: integer
-      storage_policy_id:
+      storagePolicyId:
         type: string
     type: object
   workerpool.DeployParameter:
@@ -670,6 +674,8 @@ definitions:
         items:
           $ref: '#/definitions/workerpool.DataDisk'
         type: array
+      flag:
+        $ref: '#/definitions/workerpool.Flag'
       globalIp:
         $ref: '#/definitions/virtualmachinecustomize.GlobalIPSetting'
       location:
@@ -684,10 +690,17 @@ definitions:
         type: array
       os:
         $ref: '#/definitions/workerpool.OS'
+      powerOn:
+        type: boolean
       template:
         $ref: '#/definitions/workerpool.Template'
       waitForIp:
         type: string
+    type: object
+  workerpool.Flag:
+    properties:
+      enableLogging:
+        type: boolean
     type: object
   workerpool.NetworkInterface:
     properties:
@@ -733,7 +746,7 @@ definitions:
         type: string
       size:
         type: integer
-      storage_policy_id:
+      storagePolicyId:
         type: string
     type: object
   workerpool.Template:
@@ -759,8 +772,8 @@ definitions:
 host: localhost:8829
 info:
   contact: {}
-  description: vmware vsphere api
-  title: QXP vSphere API
+  description: VMWare vSphere Facade API
+  title: vSphere Facade
   version: "1.0"
 paths:
   /token:
